@@ -23,14 +23,15 @@ AUTO_TRA ~sarevokromance/translations/%s~
 
 ALWAYS
   // No exception, everything needs to be converted
-  ACTION_DEFINE_ARRAY SareRomnoconvert BEGIN setup END
+  ACTION_DEFINE_ARRAY SareRomnoconvert BEGIN sarevokromance END
 
   // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
-  ACTION_DEFINE_ARRAY SareRomreload BEGIN sarevokromance END
+  ACTION_DEFINE_ARRAY SareRomreload BEGIN END
 
   LAF HANDLE_CHARSETS
     INT_VAR
       infer_charsets = 1
+	  from_utf8 = 1
     STR_VAR
       tra_path = EVAL ~%MOD_FOLDER%/Translations~
       noconvert_array = SareRomnoconvert
@@ -51,7 +52,7 @@ LANGUAGE ~Russian (by HelenAzura, Dajdre, Larite & Arcanecoast.ru)~
          ~sarevokromance/translations/russian/sarevokromance.tra~
 LANGUAGE ~Simplified Chinese (by Alex Lunau from T.R.O.W.)~
          ~schinese~
-         ~sarevokromance/translations/schinese/setup.tra~
+         ~sarevokromance/translations/schinese/sarevokromance.tra~
 		 
 // Component
 BEGIN @1
